@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">">
+</head>
+<body>
+ 
+  <img class="rightphoto" src="rightphoto.png">
+  <video id="video" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4"> 
+ 
+  </video>
+  <div class="container" >
+
+    <img class="logo" src="logo.png">
+
+      <div class="container1">
+        <p class="codecraft"></p>
+        <span class="cursor"></span>
+        <p class="mastering"> </p>
+      </div>
+
+      <div class="container2">
+
+        <p class="learn">I want to learn:</p>
+
+          <div class="image">
+
+             <img class="image1" src="html.png">
+             <img class="image1" src="css.png">
+              <img class="image1" src="js.png">
+
+          </div>
+          <div class="button1">
+            <button class="htmlbutton" onclick="alert('Tite ka james')">HTML</button>
+            <button class="cssbutton" onclick="alert('Tite ka james')">CSS</button>
+            <button class="jsbutton" onclick="alert('Tite ka james')">JAVASCRIPT</button>
+          </div>
+          <div class="about">
+            <button class="about1">About us</button>
+            <button class="about1">Members</button>
+          </div>
+      </div>
+  </div>
+</body>
+<script>
+ 
+ const codecraftText = "CodeCraft Pro";
+    const masteringText = "Mastering HTML, CSS & JavaScript";
+
+    const codecraftElement = document.querySelector('.codecraft');
+    const masteringElement = document.querySelector('.mastering');
+
+    let codecraftIndex = 0;
+    let masteringIndex = 0;
+
+    const typingEffect = (text, element, index) => {
+      if (index < text.length) {
+        element.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(() => typingEffect(text, element, index), 100); 
+      }
+    };
+    typingEffect(codecraftText, codecraftElement, codecraftIndex);
+    setTimeout(() => typingEffect(masteringText, masteringElement, masteringIndex), codecraftText.length * 100);
+    window.onload = typingEffect;
+</script>
+</html>
